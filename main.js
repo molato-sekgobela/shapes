@@ -9,6 +9,21 @@ class Rectangle{
     }
 }
 
+function findSmallestRectangle(rectangles){
+    let smallestRectangle = rectangles[0]; //assuming as smallest one
+
+    for (let i = 1; i < rectangles.length; i ++){
+        const currentRectangle = rectangles[i];
+
+        if(currentRectangle.width < smallestRectangle.width || currentRectangle.height < smallestRectangle.height)
+        {
+            smallestRectangle = currentRectangle
+        }
+    }
+
+    return smallestRectangle;
+}
+
 const rect1 = new Rectangle(5,10)
 const rect2 = new Rectangle(3,8)
 const rect3 = new Rectangle(4,12)
